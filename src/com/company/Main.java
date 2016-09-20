@@ -25,7 +25,7 @@ public class Main {
 
             Object quanBox = "[" + quanity1 + "]";
 
-            System.out.println("Your Inventory: " + (quanBox+items.quantity) + items.itemName);
+            //System.out.println("Your Inventory: " + (quanBox+items.quantity) + items.itemName);
 
             boolean isLoggedIn = true;
             while (isLoggedIn) {
@@ -58,14 +58,16 @@ public class Main {
                         System.out.println("Which item do you want to update?");
                         String itemQuan = scanner.nextLine();
                         if (items.contains(itemQuan)) {
+                            System.out.println("How many do you want to add?");
                             int updateQuan = scanner.nextInt();
                             int itemQuantity = quanity1 + updateQuan;
-                            items.set(itemQuan, itemQuantity);
+                            //items.set(itemQuantity);
                         }
                         break;
 
                     case "4":
-                        System.out.printf("%s %s. %s\n", items, items.itemName, items.quantity);
+                        System.out.println(items);
+                        break;
 
                     case "5":
                         isLoggedIn = false;
