@@ -21,6 +21,12 @@ public class Main {
                 users.put(userName, items);
             }
 
+            int quanity1 = 0;
+
+            Object quanBox = "[" + quanity1 + "]";
+
+            System.out.println("Your Inventory: " + (quanBox+items.quantity) + items.itemName);
+
             boolean isLoggedIn = true;
             while (isLoggedIn) {
                 System.out.println("Press 1 to add an item.");
@@ -52,12 +58,14 @@ public class Main {
                         System.out.println("Which item do you want to update?");
                         String itemQuan = scanner.nextLine();
                         if (items.contains(itemQuan)) {
-
+                            int updateQuan = scanner.nextInt();
+                            int itemQuantity = quanity1 + updateQuan;
+                            items.set(itemQuan, itemQuantity);
                         }
                         break;
 
                     case "4":
-                        System.out.println(ArrayList(userName));
+                        System.out.printf("%s %s. %s\n", items, items.itemName, items.quantity);
 
                     case "5":
                         isLoggedIn = false;
@@ -71,12 +79,3 @@ public class Main {
         }
     }
 }
-
-
-
-//        Create a variable to store the inventory items.
-//        Print out the inventory items and then list the options.
-//        If the user enters 1, let them create a new item by entering its name.
-//        If the user enters 2, let them remove an item by its number.
-//        If the user enters 3, let them update the quantity of that item.
-//        Create a login system to allow for multiple users.
