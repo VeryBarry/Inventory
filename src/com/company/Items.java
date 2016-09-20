@@ -12,4 +12,8 @@ public class Items {
         this.itemName = itemName;
         this.quantity = quantity;
     }
+
+    String getItems() {
+        return itemName;
+    }
 }
