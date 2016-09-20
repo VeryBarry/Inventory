@@ -58,7 +58,7 @@ public class Main {
                         System.out.println("Which item do you want to update?");
                         String itemQuan = scanner.nextLine();
                         if (items.contains(itemQuan)) {
-                            System.out.println("How many do you want to add?");
+                            System.out.println("How many do you want to add or remove?");
                             int updateQuan = scanner.nextInt();
                             int itemQuantity = quanity1 + updateQuan;
                             //items.set(itemQuantity);
