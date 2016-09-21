@@ -7,13 +7,12 @@ public class Items {
 
     String itemName;
     int quantity;
+    String type;
 
-    public Items(String itemName, int quantity){
-        this.itemName = itemName;
-        this.quantity = quantity;
+
+
+    public String toString(){
+        return type;
     }
 
-    String getItems() {
-        return itemName;
-    }
 }

@@ -21,15 +21,11 @@ public class Main {
                 users.put(userName, items);
             }
 
-            int quanity1 = 0;
-
-            Object quanBox = "[" + quanity1 + "]";
-
-            //System.out.println("Your Inventory: " + (quanBox+items.quantity) + items.itemName);
+            //System.out.printf("Your Inventory: " +  "[" + items.quantity + "]" + items.itemName));
 
             boolean isLoggedIn = true;
             while (isLoggedIn) {
-                System.out.println("Press 1 to add an item.");
+                System.out.println("Press 1 to create an item.");
                 System.out.println("Press 2 to remove an item.");
                 System.out.println("Press 3 to update quantity.");
                 System.out.println("Press 4 to list your inventory.");
@@ -42,8 +38,11 @@ public class Main {
                     case "1":
                         System.out.println("Enter the item name: ");
                         String itemName = scanner.nextLine();
-                        Items items1 = new Items(itemName, 1);
-                        items.add(items1);
+                        if (items.contains(itemName)) {
+                            System.out.println("Enter an item type: ");
+                            String itemType = scanner.nextLine();
+
+                        }
                         break;
 
                     case "2":
@@ -60,7 +59,7 @@ public class Main {
                         if (items.contains(itemQuan)) {
                             System.out.println("How many do you want to add or remove?");
                             int updateQuan = scanner.nextInt();
-                            int itemQuantity = quanity1 + updateQuan;
+                            //int itemQuantity = items.quantity + updateQuan;
                             //items.set(itemQuantity);
                         }
                         break;
@@ -75,9 +74,9 @@ public class Main {
 
                     default:
                         System.out.println("Invalid option.");
+
                 }
             }
-
         }
     }
 }
