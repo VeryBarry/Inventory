@@ -41,7 +41,7 @@ public class Main {
                         if (items.contains(itemName)) {
                             System.out.println("Enter an item type: ");
                             String itemType = scanner.nextLine();
-
+                            createItem(itemType);
                         }
                         break;
 
@@ -78,5 +78,24 @@ public class Main {
                 }
             }
         }
+    }
+    static Items createItem(String name) {
+        Items item;
+        if (name.equalsIgnoreCase("armor")){
+            item = new Armor();
+        }
+        else if (name.equalsIgnoreCase("weapon")){
+            item = new Weapon();
+        }
+        else if (name.equalsIgnoreCase("potion")){
+            item = new Potion();
+        }
+        else if (name.equalsIgnoreCase("food")){
+            item = new Food();
+        }
+        else {
+            item = new Miscellaneous();
+        }
+        return item;
     }
 }
